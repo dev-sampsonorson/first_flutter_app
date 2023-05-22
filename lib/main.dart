@@ -15,22 +15,23 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.green,
           title: const Text('My app!'),
         ),
-        body: Row(
+        body: ListView(
+          scrollDirection: Axis.horizontal,
           children: [
             Container(
-              width: 5000,
-              height: 5000,
+              width: 500,
+              height: 500,
               color: Colors.amber,
             ),
             Container(
-              width: 5000,
-              height: 5000,
-              color: Colors.amber,
+              width: 500,
+              height: 500,
+              color: Colors.pink,
             ),
             Container(
-              width: 5000,
-              height: 5000,
-              color: Colors.amber,
+              width: 500,
+              height: 500,
+              color: Colors.blue,
             ),
           ],
         ),

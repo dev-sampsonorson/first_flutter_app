@@ -15,13 +15,12 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.green,
             title: const Text('My app!'),
           ),
-          body: const Center(
-            // Creating a container with fixed width and height
-            child: SizedBox(
-              width: 50,
-              height: 50,
-              child: Text('Hi Mum!'),
-            ),
+          body: const Column(
+            children: [
+              Icon(Icons.backpack),
+              Icon(Icons.leaderboard),
+              Icon(Icons.person)
+            ],
           )
       ),
     );

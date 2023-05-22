@@ -15,15 +15,11 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.green,
           title: const Text('My app!'),
         ),
-        body: Stack(
-          children: [
-            Container(color: Colors.amber, width: 100, height: 100),
-            // This will be on top of the container because
-            // it's after the container
-            const Align(
-                alignment: Alignment.center, child: Icon(Icons.verified)
-            )
-          ],
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            print('pressed!');
+          },
         ),
       ),
     );

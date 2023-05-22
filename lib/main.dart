@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const HomeScreen());
+  runApp(const RootScreen());
 }
 
 class MyApp extends StatefulWidget {
@@ -50,33 +50,38 @@ class _MyAppState extends State<MyApp> {
   }
 }
 
+class RootScreen extends StatelessWidget {
+  const RootScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      // Refactor HomeScreen into separate widget to fix the following error;
+      // Navigator operation requested with a context that does not include
+      // a Navigator
+      // https://stackoverflow.com/questions/44004451/navigator-operation-requested-with-a-context-that-does-not-include-a-navigator
+      home: HomeScreen(),
+    );
+  }
+}
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // Using the Builder widget fixes the following issue
-      // Navigator operation requested with a context that does not include
-      // a Navigator
-      // https://stackoverflow.com/questions/44004451/navigator-operation-requested-with-a-context-that-does-not-include-a-navigator
-      home: Builder(
-        builder: (context) {
-          return Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.amber,
-              title: const Text('Home page'),
-            ),
-            body: ElevatedButton(
-              child: const Text('Home'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (_) => const AboutScreen(),
-                  ),
-                );
-              },
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        title: const Text('Home page'),
+      ),
+      body: ElevatedButton(
+        child: const Text('Home'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const AboutScreen(),
             ),
           );
         },

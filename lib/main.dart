@@ -16,12 +16,13 @@ class MyApp extends StatelessWidget {
             title: const Text('My app!'),
           ),
           body: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Icon(Icons.backpack),
-              Icon(Icons.leaderboard),
-              Icon(Icons.person)
+              Flexible(child: Icon(Icons.backpack)),
+              Icon(Icons.person),
+              // Take up any available space
+              Expanded(flex: 1, child: Icon(Icons.leaderboard)),
             ],
           )
       ),

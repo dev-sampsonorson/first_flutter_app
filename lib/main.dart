@@ -15,9 +15,11 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.green,
             title: const Text('My app!'),
           ),
-          body: const Padding(
-            padding: EdgeInsets.all(10),
-            child: Text('Hi Mum!'),
+          body: const Center(
+            child: Padding(
+              padding: EdgeInsets.all(10),
+              child: Text('Hi Mum!'),
+            ),
           )
       ),
     );

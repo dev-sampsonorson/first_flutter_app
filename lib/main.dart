@@ -16,8 +16,10 @@ class MyApp extends StatelessWidget {
             title: const Text('My app!'),
           ),
           body: const Center(
-            child: Padding(
-              padding: EdgeInsets.all(10),
+            // Creating a container with fixed width and height
+            child: SizedBox(
+              width: 50,
+              height: 50,
               child: Text('Hi Mum!'),
             ),
           )

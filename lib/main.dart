@@ -17,6 +17,7 @@ class MyApp extends StatelessWidget {
         ),
         body: ListView(
           scrollDirection: Axis.horizontal,
+          addAutomaticKeepAlives: false,
           children: [
             Container(
               width: 500,

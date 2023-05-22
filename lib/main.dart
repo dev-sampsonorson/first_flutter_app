@@ -11,20 +11,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.green,
-            title: const Text('My app!'),
-          ),
-          body: const Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              Flexible(child: Icon(Icons.backpack)),
-              Icon(Icons.person),
-              // Take up any available space
-              Expanded(flex: 1, child: Icon(Icons.leaderboard)),
-            ],
-          )
+        appBar: AppBar(
+          backgroundColor: Colors.green,
+          title: const Text('My app!'),
+        ),
+        body: Stack(
+          children: [
+            Container(color: Colors.amber, width: 100, height: 100),
+            // This will be on top of the container because
+            // it's after the container
+            const Icon(Icons.verified),
+          ],
+        ),
       ),
     );
   }

@@ -16,6 +16,8 @@ class MyApp extends StatelessWidget {
             title: const Text('My app!'),
           ),
           body: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Icon(Icons.backpack),
               Icon(Icons.leaderboard),

@@ -12,6 +12,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  int count = 0;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,13 +22,15 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.green,
           title: const Text('My app!'),
         ),
-        body: ListView.builder(
-          itemBuilder: (_, index) {
-            return Container(
-              color: randomColor(),
-              width: 500,
-              height: 500,
-            ),
+        body: Center(
+          child: Text('$count'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            setState(() {
+              count++;
+            });
           },
         ),
       ),

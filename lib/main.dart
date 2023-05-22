@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
         ),
+        drawer: const Drawer(child: Text('Yo!')),
       ),
     );
   }

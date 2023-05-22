@@ -15,6 +15,12 @@ class _MyAppState extends State<MyApp> {
   int count = 0;
 
   @override
+  void initState() {
+    // TODO: fetch data from Firebase
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(

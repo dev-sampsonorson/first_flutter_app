@@ -15,26 +15,14 @@ class MyApp extends StatelessWidget {
           backgroundColor: Colors.green,
           title: const Text('My app!'),
         ),
-        body: ListView(
-          scrollDirection: Axis.horizontal,
-          addAutomaticKeepAlives: false,
-          children: [
-            Container(
+        body: ListView.builder(
+          itemBuilder: (_, index) {
+            return Container(
+              color: randomColor(),
               width: 500,
               height: 500,
-              color: Colors.amber,
             ),
-            Container(
-              width: 500,
-              height: 500,
-              color: Colors.pink,
-            ),
-            Container(
-              width: 500,
-              height: 500,
-              color: Colors.blue,
-            ),
-          ],
+          },
         ),
       ),
     );

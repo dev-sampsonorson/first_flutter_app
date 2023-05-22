@@ -20,7 +20,11 @@ class MyApp extends StatelessWidget {
             Container(color: Colors.amber, width: 100, height: 100),
             // This will be on top of the container because
             // it's after the container
-            const Icon(Icons.verified),
+            const Positioned(
+              top: 25,
+              left: 25,
+              child: Icon(Icons.verified),
+            )
           ],
         ),
       ),

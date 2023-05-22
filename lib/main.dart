@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const HomeScreen());
 }
 
 class MyApp extends StatefulWidget {
@@ -45,6 +45,55 @@ class _MyAppState extends State<MyApp> {
             });
           },
         ),
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      // Using the Builder widget fixes the following issue
+      // Navigator operation requested with a context that does not include
+      // a Navigator
+      // https://stackoverflow.com/questions/44004451/navigator-operation-requested-with-a-context-that-does-not-include-a-navigator
+      home: Builder(
+        builder: (context) {
+          return Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.amber,
+              title: const Text('Home page'),
+            ),
+            body: ElevatedButton(
+              child: const Text('Home'),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const AboutScreen(),
+                  ),
+                );
+              },
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class AboutScreen extends StatelessWidget {
+  const AboutScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        title: const Text('About page'),
       ),
     );
   }

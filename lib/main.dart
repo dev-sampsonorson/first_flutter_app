@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.green,
             title: const Text('My app!'),
           ),
-          body: const Column(
+          body: const Row(
             children: [
               Icon(Icons.backpack),
               Icon(Icons.leaderboard),

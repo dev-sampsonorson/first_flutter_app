@@ -68,6 +68,8 @@ class RootScreen extends StatelessWidget {
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
+  final String img = 'resources/shaw.jpeg';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,15 +77,15 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.amber,
         title: const Text('Home page'),
       ),
-      body: ElevatedButton(
-        child: const Text('Home'),
+      body: IconButton(
+        icon: Hero(
+          tag: img,
+          child: const Image(image: AssetImage('resources/shaw.jpeg')),
+        ),
+        iconSize: 50,
         onPressed: () {
           Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (_) => const AboutScreen(),
-            ),
-          );
+              context, MaterialPageRoute(builder: (_) => const AboutScreen()));
         },
       ),
     );
@@ -93,12 +95,18 @@ class HomeScreen extends StatelessWidget {
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
 
+  final String img = 'resources/shaw.jpeg';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         title: const Text('About page'),
+      ),
+      body: Hero(
+        tag: img,
+        child: const Image(image: AssetImage('resources/shaw.jpeg')),
       ),
     );
   }

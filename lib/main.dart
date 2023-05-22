@@ -15,13 +15,9 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.green,
             title: const Text('My app!'),
           ),
-          body: Container(
-            margin: const EdgeInsets.all(100),
-            padding: const EdgeInsets.all(10),
-            color: Colors.red,
-            height: 100,
-            width: 100,
-            child: const Text('Hi Mum!'),
+          body: const Padding(
+            padding: EdgeInsets.all(10),
+            child: Text('Hi Mum!'),
           )
       ),
     );
